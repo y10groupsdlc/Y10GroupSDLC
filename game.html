@@ -130,6 +130,14 @@ function doKeyDown(evt){
             break;
     }
 }
+    
+function drawBall() {
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
 
 function draw() {
 	clear();
@@ -139,15 +147,25 @@ function draw() {
     ctx.fillStyle = "black";
     rect(0,0,1440,880);
 	ctx.fillStyle = "yellow";
-	circle(yellowx, yellowy, 20);
+	var yellowplayer = circle(yellowx, yellowy, 20);
     ctx.fillStyle = "blue";
-    circle(bluex, bluey, 20);
-    var chaser = canvas.getContext('2d');
-    chaser.beginPath();
-    chaser.strokeStyle = "white";
-    chaser.arc(710, 275, 75, 0, 2*Math.PI);
-    chaser.stroke(); 
+    var blueplayer = circle(bluex, bluey, 20);
+    var target = canvas.getContext('2d');
+    target.beginPath();
+    target.strokeStyle = "white";
+    target.arc(710, 275, 75, 0, 2*Math.PI);
+    target.stroke(); 
+    if (Math.hypot(yellowx - 710, yellowy - 275) < (90)) {
+        alert("Yellow Wins!");
+        location.reload();
+    }
+    if (Math.hypot(bluex - 710, bluey - 275) < (90)) {
+        alert("Blue Wins!");
+        location.reload();
+    }
 }
+
+    
 
 
 // Main part of program
