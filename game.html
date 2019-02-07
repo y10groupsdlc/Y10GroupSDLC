@@ -6,7 +6,8 @@
 <p style="font-size: 20px;"> Welcome </p>
 <p> Use the WASD Keys to move the blue player and the arrow keys to move the yellow player. Watch out!</p>
 </head>
-<style>
+<style media="screen">
+    
     body {
         background-color: black;
         width:  100%;
@@ -19,10 +20,30 @@
         font-size: 12px
     }
     
+    audio { 
+        display:none;
+    }
+    
+    .sqs-audio-embed {
+        visibility: hidden;
+    }
+
+    
 </style>
+
     
-<body>
+<object>
+<param name="src" value="audio.mp3">
+<param name="autoplay" value="true"> 
+<param name="hidden" value="true">
+<param name="controller" value="false">
+<embed src="audio.mp3" controller="false" autoplay="true" autostart="True" type="audio/mp3" />
+</object>
     
+
+    
+
+  
 <section>
 
 <!-- This div is the canvas -->
@@ -52,11 +73,18 @@ var yellowy = 50;
 var bluedx = 5;
 var bluedy = 5;
 var bluex = 1300;
-var bluey = 550;
+var bluey = 50;
 var WIDTH = 1440;
 var HEIGHT = 880;
 var blackx = 200;
 var blacky = 200;
+    
+
+function playAudio() {
+    body.onload = function() {
+        document.getElementById("audio").play();
+    }
+}
 
 
 function circle(x,y,r) {
@@ -82,9 +110,11 @@ function init() {
 	canvas = document.getElementById("canvas");
 	ctx = canvas.getContext("2d");
 	return setInterval(draw, 100); // this is key, tells draw function to fire 100x per second
-
     
 }
+    
+
+    
 
 function doKeyDown(evt){
 	switch (evt.keyCode) {
@@ -164,6 +194,10 @@ function draw() {
         location.reload();
     }
 }
+    
+function moveBullet() {
+    
+}
 
     
 
@@ -174,6 +208,6 @@ window.addEventListener('keydown',doKeyDown,true);
 
 </script>
 </section>
-    
+
 </body>
 </html>
