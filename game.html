@@ -2,7 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8" />
+<<<<<<< HEAD
 <title>BvsY.io</title>
+=======
+<title>Link game test</title>
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 <p style="font-size: 20px;"> Welcome </p>
 <p> Use the WASD Keys to move the blue player and the arrow keys to move the yellow player. Watch out!</p>
 </head>
@@ -27,6 +31,10 @@
     .sqs-audio-embed {
         visibility: hidden;
     }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
     
 </style>
 
@@ -60,6 +68,11 @@ This text is displayed if your browser does not support HTML5 Canvas.
    http://html5.litten.com/moving-shapes-on-the-html5-canvas-with-the-keyboard/
    programmer: MHoel, Nov 3, 2014
 */
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 // Set some global variables
 var canvas;
 var ctx;
@@ -76,16 +89,29 @@ var HEIGHT = 880;
 var blackx = 200;
 var blacky = 200;
     
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 function playAudio() {
     body.onload = function() {
         document.getElementById("audio").play();
     }
 }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 function circle(x,y,r) {
 	ctx.beginPath();
 	ctx.arc(x, y, r, 0, Math.PI*2, true);
 	ctx.fill();
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 function rect(x,y,w,h) {
 	ctx.beginPath();
 	ctx.rect(x,y,w,h);
@@ -93,9 +119,17 @@ function rect(x,y,w,h) {
 	ctx.fill();
 	ctx.stroke();
 }
+<<<<<<< HEAD
 function clear() {
 	ctx.clearRect(0, 0, WIDTH, HEIGHT);
 }
+=======
+
+function clear() {
+	ctx.clearRect(0, 0, WIDTH, HEIGHT);
+}
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 // Important starting function
 function init() {
 	canvas = document.getElementById("canvas");
@@ -104,7 +138,13 @@ function init() {
     
 }
     
+<<<<<<< HEAD
     
+=======
+
+    
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 function doKeyDown(evt){
 	switch (evt.keyCode) {
 		case 38:  /* Up arrow was pressed */
@@ -157,6 +197,10 @@ function drawBall() {
     ctx.fill();
     ctx.closePath();
 }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 function draw() {
 	clear();
 	ctx.fillStyle = "white";
@@ -186,10 +230,21 @@ function draw() {
 function moveBullet() {
     
 }
+<<<<<<< HEAD
     
 // Main part of program
 init();
 window.addEventListener('keydown',doKeyDown,true);
+=======
+
+    
+
+
+// Main part of program
+init();
+window.addEventListener('keydown',doKeyDown,true);
+
+>>>>>>> 56d80ac12b09293a866d80b81ebaf5805d01ee94
 </script>
 </section>
 
