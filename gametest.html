@@ -6,7 +6,7 @@
 <p style="font-size: 20px;"> Welcome </p>
 <p> Use the WASD Keys to move the blue player and the arrow keys to move the yellow player. Watch out!</p>
 </head>
-<style>
+<style media="screen">
     
     body {
         background-color: black;
@@ -24,13 +24,17 @@
         display:none;
     }
     
+    .sqs-audio-embed {
+        visibility: hidden;
+    }
+
+    
 </style>
 
 <body>
 
     
 <object>
-<param name="autostart" value="true">
 <param name="src" value="audio.mp3">
 <param name="autoplay" value="true"> 
 <param name="hidden" value="true">
@@ -71,10 +75,6 @@ var WIDTH = 1440;
 var HEIGHT = 880;
 var blackx = 200;
 var blacky = 200;
-var audio = new Audio('audio.mp3');
-
-audio.play();
-
     
 
 function playAudio() {
