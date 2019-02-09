@@ -1,0 +1,221 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<title>BvsY.io</title>
+<p style="font-size: 20px;"> Welcome </p>
+<p> Use the WASD Keys to move the blue player and the arrow keys to move the yellow player. Watch out!</p>
+</head>
+<style>
+    
+    body {
+        background-color: black;
+        width:  100%;
+        height: 100%;
+        margin: 0;
+        color: white;
+        overflow: hidden;
+        text-align: center;
+        font-family: Comic Sans MS;
+        font-size: 12px
+    }
+    
+    audio { 
+        display:none;
+    }
+    
+</style>
+
+<body>
+
+    
+<object>
+<param name="autostart" value="true">
+<param name="src" value="audio.mp3">
+<param name="autoplay" value="true"> 
+<param name="hidden" value="true">
+<param name="controller" value="false">
+<embed src="audio.mp3" controller="false" autoplay="true" autostart="True" type="audio/mp3" />
+</object>
+
+<section>
+
+<!-- This div is the canvas -->
+<div>
+<canvas id="canvas" width="1440" height="880" style="background-color: black">
+This text is displayed if your browser does not support HTML5 Canvas.
+</canvas>
+</div>
+    
+<img id="bullet" src="https://www.freeiconspng.com/uploads/bullet-png-clipart-11.png" alt="Bullet">
+
+<script type="text/javascript">
+/*
+   index.html - draws a dot on the screen, credit to:
+   http://html5.litten.com/moving-shapes-on-the-html5-canvas-with-the-keyboard/
+   programmer: MHoel, Nov 3, 2014
+*/
+
+// Set some global variables
+var canvas;
+var ctx;
+var yellowdx = 5;
+var yellowdy = 5;
+var yellowx = 130;
+var yellowy = 50;
+var bluedx = 5;
+var bluedy = 5;
+var bluex = 1300;
+var bluey = 50;
+var WIDTH = 1440;
+var HEIGHT = 880;
+var blackx = 200;
+var blacky = 200;
+var audio = new Audio('audio.mp3');
+
+audio.play();
+
+    
+
+function playAudio() {
+    body.onload = function() {
+        document.getElementById("audio").play();
+    }
+}
+
+function circle(x,y,r) {
+	ctx.beginPath();
+	ctx.arc(x, y, r, 0, Math.PI*2, true);
+	ctx.fill();
+}
+
+function rect(x,y,w,h) {
+	ctx.beginPath();
+	ctx.rect(x,y,w,h);
+	ctx.closePath();
+	ctx.fill();
+	ctx.stroke();
+}
+function clear() {
+	ctx.clearRect(0, 0, WIDTH, HEIGHT);
+}
+
+function clear() {
+	ctx.clearRect(0, 0, WIDTH, HEIGHT);
+}
+
+// Important starting function
+function init() {
+	canvas = document.getElementById("canvas");
+	ctx = canvas.getContext("2d");
+	return setInterval(draw, 100); // this is key, tells draw function to fire 100x per second
+    
+}
+    
+
+
+    
+
+function doKeyDown(evt){
+	switch (evt.keyCode) {
+		case 38:  /* Up arrow was pressed */
+			if (yellowy - yellowdy > 0){
+				yellowy -= yellowdy*4;
+			}
+			break;
+		case 40:  /* Down arrow was pressed */
+			if (yellowy + yellowdy < HEIGHT){
+				yellowy += yellowdy*4;
+			}
+			break;
+		case 37:  /* Left arrow was pressed */
+			if (yellowx - yellowdx > 0){
+				yellowx -= yellowdx*4;
+			}
+			break;
+		case 39:  /* Right arrow was pressed */
+			if (yellowx + yellowdx < WIDTH){
+				yellowx += yellowdx*4;
+			}
+			break;
+        case 87: /* "W" key was pressed */
+            if (bluey - bluedy > 0){
+                bluey = bluey - bluedy*4;
+            }
+            break;
+        case 83: /* "S" key was pressed */
+            if (bluey + bluedy < HEIGHT){
+                bluey += bluedy*4;
+            }
+            break;
+        case 65: /* "A" key was pressed */
+            if (bluex - bluedx > 0){
+				bluex = bluex - bluedx*4;
+			}
+            break;
+        case 68: /* "D" key was pressed */
+            if (bluex + bluedx < WIDTH){
+				bluex += bluedx*4;
+			}
+            break;
+    }
+}
+    
+function drawBall() {
+    ctx.beginPath();
+    ctx.arc(x, y, 10, 0, Math.PI*2);
+    ctx.fillStyle = "#0095DD";
+    ctx.fill();
+    ctx.closePath();
+}
+
+
+function draw() {
+	clear();
+	ctx.fillStyle = "white";
+	ctx.strokeStyle = "black";
+	rect(0,0,WIDTH,HEIGHT);
+    ctx.fillStyle = "black";
+    rect(0,0,1440,880);
+	ctx.fillStyle = "yellow";
+	var yellowplayer = circle(yellowx, yellowy, 20);
+    ctx.fillStyle = "blue";
+    var blueplayer = circle(bluex, bluey, 20);
+    var target = canvas.getContext('2d');
+    target.beginPath();
+    target.strokeStyle = "white";
+    target.arc(710, 275, 75, 0, 2*Math.PI);
+    target.stroke(); 
+    if (Math.hypot(yellowx - 710, yellowy - 275) < (90)) {
+        alert("Yellow Wins!");
+        location.reload();
+    }
+    if (Math.hypot(bluex - 710, bluey - 275) < (90)) {
+        alert("Blue Wins!");
+        location.reload();
+    }
+}
+    
+function moveBullet() {
+    
+}
+
+    
+// Main part of program
+init();
+window.addEventListener('keydown',doKeyDown,true);
+
+
+    
+
+
+// Main part of program
+init();
+window.addEventListener('keydown',doKeyDown,true);
+
+
+</script>
+</section>
+
+</body>
+</html>
