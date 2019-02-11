@@ -26,7 +26,7 @@ We are a group of highschoolers from Upper Canada College who produced BvsY.io a
 
 <style>
     @font-face {
-    font-family: 'Bebas';
+    font-family: 'Bebas'; /*a name to be used later*/
     src: url('BebasBold.otf'); /*URL to font*/
 }
     
@@ -56,7 +56,7 @@ We are a group of highschoolers from Upper Canada College who produced BvsY.io a
                     yellow, 
                     white, blue, white,
                     yellow);
-  animation: .5s shake infinite alternate;
+  animation: .08s shake infinite alternate;
 }
 
 @keyframes shake {
@@ -71,9 +71,9 @@ We are a group of highschoolers from Upper Canada College who produced BvsY.io a
      
     
     body{
-  background-image: url("https://media.giphy.com/media/LNXJ6iViBR8C4/giphy.gif");
-        background-size: cover;
-        width: 100%;
+  background-image: url("https://i.gifer.com/56tk.gif");
+        background-size: contain;
+
     }
     
     #home-button {
@@ -131,7 +131,7 @@ We are a group of highschoolers from Upper Canada College who produced BvsY.io a
 
 
 
-#home-button:hover {
+#home-button: {
   background-color: blue;
     color: yellow;
 }
@@ -147,18 +147,16 @@ We are a group of highschoolers from Upper Canada College who produced BvsY.io a
 
         
     
-    p {
+    h2 {
   animation-duration: 2s;
   animation-name: slidein;
-        animation-iteration-count: infinite;
-  animation-direction: alternate;
-     position: absolute;
-   bottom: 50px;
-    
+        animation-iteration-count:;
+     position: fixed;
+   bottom: 150px;
         text-align: center;
-        font-size: 50px;
+        font-size: 40px;
   font-family: 'Bebas';
-        color:blue
+        color: ghostwhite;
         
 }
 
@@ -191,18 +189,26 @@ We are a group of highschoolers from Upper Canada College who produced BvsY.io a
       
   }
 }
+  
+    
+    
 
 </style>
-</center>
-</head>
+            </center>
+    </head>
+
 <body>
 
 
-
 <a href="https://y10groupsdlc.github.io/Y10GroupSDLC"><button class="button" id="home-button">Home</button></a>
-<a href="https://y10groupsdlc.github.io/Y10GroupSDLC/about.html"><button class="button" id="about-button">About Us</button></a>
-<a href="https://y10groupsdlc.github.io/Y10GroupSDLC/game.html"><button class="button" id="game-button">Game</button></a>
+    <a href="https://y10groupsdlc.github.io/Y10GroupSDLC/about.html"><button class="button" id="about-button">About Us</button></a>
+    <a href="https://y10groupsdlc.github.io/Y10GroupSDLC/game.html"><button class="button" id="game-button">Game</button></a>
 
         
-</body>    
+</body>
+    
+    
+    
+    
+    
 </html>
