@@ -88,10 +88,14 @@ var canvas;
 var ctx;
 var yellowdx = 5;
 var yellowdy = 5;
+var yellowxoriginal = 130;
+var yellowyoriginal = 50;
 var yellowx = 130;
 var yellowy = 50;
 var bluedx = 5;
 var bluedy = 5;
+var bluexoriginal = 1300;
+var blueyoriginal = 50;
 var bluex = 1300;
 var bluey = 50;
 var WIDTH = 1440;
@@ -204,12 +208,10 @@ function doKeyDown(evt){
         case 32: /* "Space" key was pressed */
             if (gameon) {
                 blueshoot();
-                alert("Blue Shot!");
             }
         case 80: /* "P" key was pressed */
             if (gameon) {
                 yellowshoot();  
-                alert("Yellow Shot!");
             }
             
             
@@ -255,6 +257,13 @@ function draw() {
         alert("Blue Wins!");
         bluewins = true;
         self.close();  
+    }
+    if (Math.hypot(bluex - yellowx, bluey - yellowy) < (40)) {
+        collision = true;
+        bluex = bluexoriginal;
+        bluey = blueyoriginal;
+        yellowx = yellowxoriginal;
+        yellowy = yellowyoriginal;
     }
     
     ctx.fillStyle = "green";
