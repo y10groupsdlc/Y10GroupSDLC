@@ -1,5 +1,6 @@
 <!doctype html>
 <html>
+<title>BvsY.io - Level 2</title>
 <head>
 <meta charset="UTF-8" />
 <br>
@@ -7,8 +8,7 @@
 <p style="color: orange;"> Welcome. Use the WASD Keys to move the blue player and the arrow keys to move the yellow player. Try to beat your opponent to the white target circle. Watch out!</p>
 <a href="https://y10groupsdlc.github.io/Y10GroupSDLC/">
 <img src="menu.png" align="center" alt="Menu"  width="60" height="60">
-<p style="color: white; text-align: left;"><a href="https://y10groupsdlc.github.io/Y10GroupSDLC/gamelevel2.html">Level 2</a></p>
-<p style="color: white; text-align: left;"><a href="https://y10groupsdlc.github.io/Y10GroupSDLC/gamelevel3.html">Level 3</a></p>
+<p style="color: white; text-align: center;"><a href="https://y10groupsdlc.github.io/Y10GroupSDLC/game.html">Level 1</a></p>
 </head>
 <style>
     
@@ -243,16 +243,16 @@ function draw() {
     var target = canvas.getContext('2d');
     target.beginPath();
     target.strokeStyle = "white";
-    target.arc(710, 275, 75, 0, 2*Math.PI);
+    target.arc(710, 275, 50, 0, 2*Math.PI);
     target.stroke(); 
-    if (Math.hypot(yellowx - 710, yellowy - 275) < (90)) {
+    if (Math.hypot(yellowx - 710, yellowy - 275) < (75)) {
         location.reload();
         alert("Yellow Wins!");
         yellowwins = true;
         self.close();
         
     }
-    if (Math.hypot(bluex - 710, bluey - 275) < (90)) {
+    if (Math.hypot(bluex - 710, bluey - 275) < (75)) {
         location.reload();
         alert("Blue Wins!");
         bluewins = true;
